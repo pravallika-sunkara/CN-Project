@@ -1,6 +1,6 @@
 #Read me
 
-##DESIGN OF THE NETWORK ARCHITECTURE
+#DESIGN OF THE NETWORK ARCHITECTURE
 
 In our setup we are using a Mac OS X. So all the steps are relative to it.For setting up the network in this project, we would require:
 Raspberry Pi 2 Model B+
@@ -14,7 +14,7 @@ Step1:
 First, take the microSD card insert into your computer and download the latest OS for the raspberry Pi into your computer from  www.raspberrypi.org (Raspbian-Wheezy-2015 image)
 Step 2:
 Open the terminal and enter the command
-	$ diskutil list
+	'''$ diskutil list'''
 This command defines the memory partitions in the CPU.
 Step 3:
 Carefully, identify the disk(not the partition) of the corresponding SD card (e.g. disk4 not disk4s1). Unmount the SDcard by using by using this command:
