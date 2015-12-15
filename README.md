@@ -1,6 +1,7 @@
 #Read me
 DESIGN OF THE NETWORK ARCHITECTURE
-In our setup we are using a Mac OS X. So all the steps are relative to it.For setting up the network in this project, we would require:
+
+#In our setup we are using a Mac OS X. So all the steps are relative to it.For setting up the network in this project, we would require:
 Raspberry Pi 2 Model B+
 Micro SD card(8GB) 
 Wifi Dongle
@@ -105,7 +106,7 @@ CASE 2:
 Connecting the raspberry pi’s to the network requires its ip address. However, if there is a shutdown in the power, depending on the IP addresses DHCP licenses of the sensor nodes might change. This may or may not lead to reconfiguration of the sensor node. As this is unreliable, we might have some issues regarding the remote login. We have faced one such problem and could solve it using the ssh-keyscan method.
 
 REFERENCES:
-[1]https://learn.adafruit.com/dht-humidity-sensing-on-raspberry-pi-with-gdocs-logging/software-install-updated
+#[1]https://learn.adafruit.com/dht-humidity-sensing-on-raspberry-pi-with-gdocs-logging/software-install-updated
 [2]https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/setting-up-wifi-with-occidentalis
 [3]http://raspberryalphaomega.org.uk/2013/07/10/a-solution-to-multiple-raspberry-pi-ssh-key-woes/
 [4]https://plot.ly/python/getting-started/
