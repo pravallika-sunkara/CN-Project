@@ -1,7 +1,8 @@
 #Read me
-DESIGN OF THE NETWORK ARCHITECTURE
 
-#In our setup we are using a Mac OS X. So all the steps are relative to it.For setting up the network in this project, we would require:
+##DESIGN OF THE NETWORK ARCHITECTURE
+
+In our setup we are using a Mac OS X. So all the steps are relative to it.For setting up the network in this project, we would require:
 Raspberry Pi 2 Model B+
 Micro SD card(8GB) 
 Wifi Dongle
