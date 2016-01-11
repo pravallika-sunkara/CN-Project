@@ -39,16 +39,13 @@ Connect the raspberry pi to a power  source and through a wired connection to yo
 	$ ssh -X pi@raspberrypi.local (raspberry pi IP address)
 We can login using a secure shell using the above command.This would prompt the user with a user password(“raspberry”).
 
-NOTE:In case of warnings mentioning possible DNS SPOOFING DETECTED type errors
-try the command:
+###NOTE:
 	$ ssh-keyscan “ip address of raspberry pi” >> ~/.ssh/known_hosts
-
+In case of warnings mentioning possible DNS SPOOFING DETECTED type errors try the above command.
+	
 ##SETTING UP WIFI DONGLE:
-	To setup WIFI on the raspberry pi, we need to first connect the raspberry pi via ethernet and then insert the WIFI dongle in one of the USB slots. 
-	You can then type the command:
-$ startlxde & (which forms a separate virtual screen)
-	Once that opens up, you can open the Wpa_gui on the desktop, and click on “Scan”  to scan the wireless networks available. You can choose the one which you can enter and double click on it. 
-Then  , the screen appears like this:
+	$ startlxde & 
+To setup WIFI on the raspberry pi, we need to first connect the raspberry pi via ethernet and then insert the WIFI dongle in one of the USB slots.Enter the above command in the terminal, which forms a seperate virtual screen. Once that opens up, you can open the Wpa_gui on the desktop, and click on “Scan”  to scan the wireless networks available. You can choose the one which you can enter and double click on it. 
 
 Here we enter the user details like :
 Identity: (Email id)
@@ -57,43 +54,37 @@ Inner Auth: PAP
 
 
 ##INSTALLING ADAFRUIT DHT11 LIBRARY
-	To install adafruit DHT11 library, we have to follow these steps:
-
  	git clone https://github.com/adafruit/Adafruit_python_DHT.git
-This command gets the data from the github 
-Then get into the Adafruit folder  and then follow these steps:
 	$ sudo apt-get update
 	$ sudo apt-get install build-essential python-dev python-openssl
 	$ cd Adafruit_DHT
 	$ sudo python setup.py install (This installs the library)
-
+	
+To install adafruit DHT11 library, we have to follow these steps as shown above. Once git clone command is done, it grabs the files from github repository. Open the adafruit folder and follow the next steps as root user.
 
 ##INSTALLATION OF PLOTLY LIBRARY:
-	At the server end, we have imported the libraries of plotly. At first, we have created an account in plotly, this creates API key for my account. As we are using streaming real-time data continuously, plotly generates a separate API stream tokens.
-	In order for the server to support plotly, we need to install few libraries, they can be done from the command line using the commands:
+
 	$ sudo pip install plotly
+At the server end, we have imported the libraries of plotly. At first, we have created an account in plotly, this creates API key for my account. As we are using streaming real-time data continuously, plotly generates a separate API stream tokens.In order for the server to support plotly, we need to install few libraries, they can be done from the command line using the above command.
 Once it is installed you can check it, by opening python and enter in the interpreter,
-   
    >>> import plotly
    >>>
-
 which should return you to the line, successfully. 
 Once that is done, we can import the same library in the code and use it by 
 py.sign_in(“username”,”api_key”)
 
 ##INSTRUCTIONS TO RUN THE CODE
 	In this project, we tried to monitor an application where a wireless sensor network is setup up. In this we have a single server and two client connected Wirelessly through 802.11 b/g.
-The two sensor nodes are chosen in such a way that , they are capable enough to have its own OS to handle the sensor information.  
-
+The two sensor nodes are chosen in such a way that , they are capable enough to have its own OS to handle the sensor information.   
 From the command line terminal, the server can be switched on to make it available to listen to the sensor node information as follows: 
 
-$ sudo python server.py -s 
+####$ sudo python server.py -s 
 (This is run as a root, and an argument ”-s” informs that it is a server)
 
 and on either of the clients the sensor nodes, one can run the client code as below:
 
-$ sudo python client1.py -c (server address) 
-$ sudo python client2.py -c (server address)
+####$ sudo python client1.py -c (server address) 
+####$ sudo python client2.py -c (server address)
 
 Here is a video demo of our project, and how the system actually reacts in this link below:
     https://www.youtube.com/watch?v=z0Jn7DMbfEM
