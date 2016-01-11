@@ -20,22 +20,22 @@ First to configure the Raspberry Pi 2, we need to follow these steps:
 	This command defines the memory partitions in the CPU.
 
 ###Step 3:
-	Carefully, identify the disk(not the partition) of the corresponding SD card (e.g. disk4 not disk4s1). Unmount the SDcard by using by using this command:
-	$ diskutil unmountDisk /dev/disk<disk no from diskutil list>
+Carefully, identify the disk(not the partition) of the corresponding SD card (e.g. disk4 not disk4s1). Unmount the SDcard by using by using this command:
+		$ diskutil unmountDisk /dev/disk<disk no from diskutil list>
 	For example: $ diskutil unmount /dev/disk4 
 	
 ###Step 4:
 	Navigate into the folder where the Raspbian-wheezy-2015 image is downloaded and then copy the data to your SD card, using the command:
 	$ sudo dd bs=1m if=image.img of=/dev/rdisk<disk no from diskutil>
-	NOTE: If it results in an error,  try with “bs=1M”
+NOTE: If it results in an error,  try with “bs=1M”
 	
 ###Step 5:
-	To check the initial setup, we need to change the network settings and change the ethernet preferences to “Using DHCP” and configure the location to “automatic”.
+To check the initial setup, we need to change the network settings and change the ethernet preferences to “Using DHCP” and configure the location to “automatic”.
 
 ###Step 6:
 	Connect the raspberry pi to a power  source and through a wired connection to your computer and check if it works. Using the following command:
 	$ ping raspberrypi.local
-	This gives the ip address of the raspberry pi.
+This gives the ip address of the raspberry pi.
 
 ###Step 7:
 	Once this is done, we can login remotely via secure shell, by using this command:
