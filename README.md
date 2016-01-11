@@ -1,6 +1,6 @@
-##Environment Monitoring and network analysis using Raspberry Pi 
+#ENVIRONMENT MONITORING AND NETWORK ANALYSIS USING RASPBERRY PI 
 
-#DESIGN OF THE NETWORK ARCHITECTURE
+##Design of network architecture
 In our setup we are using a Mac OS X. So all the steps are relative to it.For setting up the network in this project, we would require:
 -Raspberry Pi 2 Model B+
 -Micro SD card(8GB) 
@@ -8,7 +8,7 @@ In our setup we are using a Mac OS X. So all the steps are relative to it.For se
 -Sensor (DHT11)
 -Ethernet cable
 
-#Raspberry Pi configuration:
+##Raspberry Pi configuration:
 First to configure the Raspberry Pi 2, we need to follow these steps:
 --Step1:
 	First, take the microSD card insert into your computer and download the latest OS for the raspberry Pi into your computer from  www.raspberrypi.org (Raspbian-Wheezy-2015 image)
@@ -40,7 +40,7 @@ try the command:
 	$ ssh-keyscan “ip address of raspberry pi” >> ~/.ssh/known_hosts
 Look at the example below:
 
-#SETTING UP WIFI DONGLE:
+##SETTING UP WIFI DONGLE:
 To setup WIFI on the raspberry pi, we need to first connect the raspberry pi via ethernet and then insert the WIFI dongle in one of the USB slots. 
 You can then type the command:
 $ startlxde & (which forms a separate virtual screen)
@@ -53,7 +53,7 @@ password: (password)
 Inner Auth: PAP
 
 
-#INSTALLING ADAFRUIT DHT11 LIBRARY
+##INSTALLING ADAFRUIT DHT11 LIBRARY
 To install adafruit DHT11 library, we have to follow these steps:
 
  git clone https://github.com/adafruit/Adafruit_python_DHT.git
@@ -65,7 +65,7 @@ $ cd Adafruit_DHT
 $ sudo python setup.py install (This installs the library)
 
 
-#INSTALLATION OF PLOTLY LIBRARY:
+##INSTALLATION OF PLOTLY LIBRARY:
 At the server end, we have imported the libraries of plotly. At first, we have created an account in plotly, this creates API key for my account. As we are using streaming real-time data continuously, plotly generates a separate API stream tokens.
 In order for the server to support plotly, we need to install few libraries, they can be done from the command line using the commands:
 $ sudo pip install plotly
@@ -76,7 +76,7 @@ which should return you to the line, successfully.
 Once that is done, we can import the same library in the code and use it by 
 py.sign_in(“username”,”api_key”)
 
-#INSTRUCTIONS TO RUN THE CODE
+##INSTRUCTIONS TO RUN THE CODE
 In this project, we tried to monitor an application where a wireless sensor network is setup up. In this we have a single server and two client connected Wirelessly through 802.11 b/g.
 The two sensor nodes are chosen in such a way that , they are capable enough to have its own OS to handle the sensor information.  
 
@@ -99,15 +99,14 @@ We have just implemented with two sensor nodes in a network, but which can be im
 However, looking at the extensions sections, we can also improve it by sending the user, a warning email whenever the values drop below a threshold level. 
 
 
-#TEST CASES
-#CASE 1:
+##TEST CASES
+CASE 1:
 In our case, we have a server serving multiple clients. These are continuously transmitting data and this when it reaches the server will be opening a GUI or visualization tool to represent them in a graph. This works fine when a single client is connected. But when two clients are connected, it mixes up the data coming from both the clients and gives the output and this is not desirable. 
 
-#CASE 2:
+CASE 2:
 Connecting the raspberry pi’s to the network requires its ip address. However, if there is a shutdown in the power, depending on the IP addresses DHCP licenses of the sensor nodes might change. This may or may not lead to reconfiguration of the sensor node. As this is unreliable, we might have some issues regarding the remote login. We have faced one such problem and could solve it using the ssh-keyscan method.
 
-#REFERENCES:
-
+##REFERENCES:
 [1]https://learn.adafruit.com/dht-humidity-sensing-on-raspberry-pi-with-gdocs-logging/software-install-updated
 [2]https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/setting-up-wifi-with-occidentalis
 [3]http://raspberryalphaomega.org.uk/2013/07/10/a-solution-to-multiple-raspberry-pi-ssh-key-woes/
