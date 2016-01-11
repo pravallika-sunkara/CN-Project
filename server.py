@@ -41,7 +41,7 @@ def server():
 
 def clientthread(conn):
 	#plotly signin and setup
-	py.sign_in('lol2692','6yk748kwqh')
+	py.sign_in('plotly_username','6yk748kwqh')
 	
 	url=py.plot([{'x':[],'y':[],'type':'scatter','stream':{'token':'hxkaxe7wkj','maxpoints':200}}],filename='Signal Level')
 	url2=py.plot([{'x':[],'y':[],'type':'scatter','stream': {'token':'zivvy1rznz','maxpoints': 200}}], filename='Bit Rate')
@@ -67,7 +67,7 @@ def clientthread(conn):
     	mail.ehlo()
         mail.starttls()
 	print "started starttls"
-        mail.login('nwece671@gmail.com','nwece671project')
+        mail.login('sender_email@gmail.com','sender_password')
 	while 1:
             data  = conn.recv(BUFSIZE)   
 	    if not data:
@@ -86,8 +86,8 @@ def clientthread(conn):
 	    #time.sleep(15) #to sepcify how frequently to receive a email to a user
 	
 	    #Email notifications to the users
-      mail.sendmail('nwece671@gmail.com','psunkara@umass.edu',data+'\n'+"Signal level:"+url+'\n'+"Bitrate:"+url2+'\n'+"Temperature:"+url3+'\n'+"Humidity:"+url4+'\n'+"Throughput:"+url5)
-	    stream1.close()
+      mail.sendmail('sender_email@gmail.com','receiver_email@umass.edu',data+'\n'+"Signal level:"+url+'\n'+"Bitrate:"+url2+'\n'+"Temperature:"+url3+'\n'+"Humidity:"+url4+'\n'+"Throughput:"+url5)
+      stream1.close()
       stream2.close()
       stream3.close()
       stream4.close()
