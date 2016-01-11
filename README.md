@@ -63,28 +63,27 @@ Inner Auth: PAP
 To install adafruit DHT11 library, we have to follow these steps as shown above. Once git clone command is done, it grabs the files from github repository. Open the adafruit folder and follow the next steps as root user.
 
 ##INSTALLATION OF PLOTLY LIBRARY:
-
 	$ sudo pip install plotly
 At the server end, we have imported the libraries of plotly. At first, we have created an account in plotly, this creates API key for my account. As we are using streaming real-time data continuously, plotly generates a separate API stream tokens.In order for the server to support plotly, we need to install few libraries, they can be done from the command line using the above command.
 Once it is installed you can check it, by opening python and enter in the interpreter,
    >>> import plotly
    >>>
+   
 which should return you to the line, successfully. 
 Once that is done, we can import the same library in the code and use it by 
 py.sign_in(“username”,”api_key”)
 
 ##INSTRUCTIONS TO RUN THE CODE
-	In this project, we tried to monitor an application where a wireless sensor network is setup up. In this we have a single server and two client connected Wirelessly through 802.11 b/g.
-The two sensor nodes are chosen in such a way that , they are capable enough to have its own OS to handle the sensor information.   
-From the command line terminal, the server can be switched on to make it available to listen to the sensor node information as follows: 
+In this project, we tried to monitor an application where a wireless sensor network is setup up. In this we have a single server and two client connected Wirelessly through 802.11 b/g.
+The two sensor nodes are chosen in such a way that , they are capable enough to have its own OS to handle the sensor information.   From the command line terminal, the server can be switched on to make it available to listen to the sensor node information as follows: 
 
-####$ sudo python server.py -s 
+#####$ sudo python server.py -s 
 (This is run as a root, and an argument ”-s” informs that it is a server)
 
 and on either of the clients the sensor nodes, one can run the client code as below:
 
-####$ sudo python client1.py -c (server address) 
-####$ sudo python client2.py -c (server address)
+#####$ sudo python client1.py -c (server address) 
+#####$ sudo python client2.py -c (server address)
 
 Here is a video demo of our project, and how the system actually reacts in this link below:
     https://www.youtube.com/watch?v=z0Jn7DMbfEM
