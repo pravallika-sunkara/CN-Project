@@ -16,7 +16,7 @@ First to configure the Raspberry Pi 2, we need to follow these steps:
 
 ###Step 2:
 Open the terminal and enter the command
-	   $ diskutil list
+	   	$ diskutil list
 This command defines the memory partitions in the CPU.
 
 ###Step 3:
