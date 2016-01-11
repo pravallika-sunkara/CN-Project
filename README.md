@@ -12,35 +12,35 @@ In our setup we are using a Mac OS X. So all the steps are relative to it.For se
 First to configure the Raspberry Pi 2, we need to follow these steps:
 
 ###Step1:
-First, take the microSD card insert into your computer and download the latest OS for the raspberry Pi into your computer from  www.raspberrypi.org (Raspbian-Wheezy-2015 image)
+	First, take the microSD card insert into your computer and download the latest OS for the raspberry Pi into your computer from  www.raspberrypi.org (Raspbian-Wheezy-2015 image)
 
 ###Step 2:
-Open the terminal and enter the command
+	Open the terminal and enter the command
 	   $ diskutil list
-This command defines the memory partitions in the CPU.
+	This command defines the memory partitions in the CPU.
 
 ###Step 3:
-Carefully, identify the disk(not the partition) of the corresponding SD card (e.g. disk4 not disk4s1). Unmount the SDcard by using by using this command:
+	Carefully, identify the disk(not the partition) of the corresponding SD card (e.g. disk4 not disk4s1). Unmount the SDcard by using by using this command:
 	$ diskutil unmountDisk /dev/disk<disk no from diskutil list>
 	For example: $ diskutil unmount /dev/disk4 
 	
 ###Step 4:
-Navigate into the folder where the Raspbian-wheezy-2015 image is downloaded and then copy the data to your SD card, using the command:
+	Navigate into the folder where the Raspbian-wheezy-2015 image is downloaded and then copy the data to your SD card, using the command:
 	$ sudo dd bs=1m if=image.img of=/dev/rdisk<disk no from diskutil>
 	NOTE: If it results in an error,  try with “bs=1M”
 	
 ###Step 5:
-To check the initial setup, we need to change the network settings and change the ethernet preferences to “Using DHCP” and configure the location to “automatic”.
+	To check the initial setup, we need to change the network settings and change the ethernet preferences to “Using DHCP” and configure the location to “automatic”.
 
 ###Step 6:
-Connect the raspberry pi to a power  source and through a wired connection to your computer and check if it works. Using the following command:
+	Connect the raspberry pi to a power  source and through a wired connection to your computer and check if it works. Using the following command:
 	$ ping raspberrypi.local
-This gives the ip address of the raspberry pi.
+	This gives the ip address of the raspberry pi.
 
 ###Step 7:
-Once this is done, we can login remotely via secure shell, by using this command:
+	Once this is done, we can login remotely via secure shell, by using this command:
 	$ ssh -X pi@raspberrypi.local (raspberry pi IP address)
-This would prompt the user with a user password(“raspberry”).
+	This would prompt the user with a user password(“raspberry”).
 NOTE:
 In case of warnings mentioning possible DNS SPOOFING DETECTED type errors
 try the command:
@@ -48,10 +48,10 @@ try the command:
 Look at the example below:
 
 ##SETTING UP WIFI DONGLE:
-To setup WIFI on the raspberry pi, we need to first connect the raspberry pi via ethernet and then insert the WIFI dongle in one of the USB slots. 
-You can then type the command:
+	To setup WIFI on the raspberry pi, we need to first connect the raspberry pi via ethernet and then insert the WIFI dongle in one of the USB slots. 
+	You can then type the command:
 $ startlxde & (which forms a separate virtual screen)
-Once that opens up, you can open the Wpa_gui on the desktop, and click on “Scan”  to scan the wireless networks available. You can choose the one which you can enter and double click on it. 
+	Once that opens up, you can open the Wpa_gui on the desktop, and click on “Scan”  to scan the wireless networks available. You can choose the one which you can enter and double click on it. 
 Then  , the screen appears like this:
 
 Here we enter the user details like :
@@ -61,23 +61,24 @@ Inner Auth: PAP
 
 
 ##INSTALLING ADAFRUIT DHT11 LIBRARY
-To install adafruit DHT11 library, we have to follow these steps:
+	To install adafruit DHT11 library, we have to follow these steps:
 
- git clone https://github.com/adafruit/Adafruit_python_DHT.git
-	This command gets the data from the github 
+ 	git clone https://github.com/adafruit/Adafruit_python_DHT.git
+This command gets the data from the github 
 Then get into the Adafruit folder  and then follow these steps:
-$ sudo apt-get update
-$ sudo apt-get install build-essential python-dev python-openssl
-$ cd Adafruit_DHT
-$ sudo python setup.py install (This installs the library)
+	$ sudo apt-get update
+	$ sudo apt-get install build-essential python-dev python-openssl
+	$ cd Adafruit_DHT
+	$ sudo python setup.py install (This installs the library)
 
 
 ##INSTALLATION OF PLOTLY LIBRARY:
-At the server end, we have imported the libraries of plotly. At first, we have created an account in plotly, this creates API key for my account. As we are using streaming real-time data continuously, plotly generates a separate API stream tokens.
-In order for the server to support plotly, we need to install few libraries, they can be done from the command line using the commands:
-$ sudo pip install plotly
+	At the server end, we have imported the libraries of plotly. At first, we have created an account in plotly, this creates API key for my account. As we are using streaming real-time data continuously, plotly generates a separate API stream tokens.
+	In order for the server to support plotly, we need to install few libraries, they can be done from the command line using the commands:
+	$ sudo pip install plotly
 Once it is installed you can check it, by opening python and enter in the interpreter,
-###>>> import plotly
+   
+   >>> import plotly
    >>>
 
 which should return you to the line, successfully. 
@@ -85,7 +86,7 @@ Once that is done, we can import the same library in the code and use it by
 py.sign_in(“username”,”api_key”)
 
 ##INSTRUCTIONS TO RUN THE CODE
-In this project, we tried to monitor an application where a wireless sensor network is setup up. In this we have a single server and two client connected Wirelessly through 802.11 b/g.
+	In this project, we tried to monitor an application where a wireless sensor network is setup up. In this we have a single server and two client connected Wirelessly through 802.11 b/g.
 The two sensor nodes are chosen in such a way that , they are capable enough to have its own OS to handle the sensor information.  
 
 From the command line terminal, the server can be switched on to make it available to listen to the sensor node information as follows: 
