@@ -15,9 +15,8 @@ First to configure the Raspberry Pi 2, we need to follow these steps:
 	First, take the microSD card insert into your computer and download the latest OS for the raspberry Pi into your computer from  www.raspberrypi.org (Raspbian-Wheezy-2015 image)
 
 ###Step 2:
-Open the terminal and enter the command
-	   	$ diskutil list
-This command defines the memory partitions in the CPU.
+	$ diskutil list
+In the terminal enter the command.This command defines the memory partitions in the CPU.
 
 ###Step 3:
 Carefully, identify the disk(not the partition) of the corresponding SD card (e.g. disk4 not disk4s1). Unmount the SDcard by using by using this command:
