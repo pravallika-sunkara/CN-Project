@@ -1,4 +1,4 @@
-#ENVIRONMENT MONITORING AND NETWORK ANALYSIS USING RASPBERRY PI 
+#   Network monitoring and analysis of WSN using Raspberry Pi 
 
 ##Design of network architecture
 In our setup we are using a Mac OS X. So all the steps are relative to it.For setting up the network in this project, we would require:
